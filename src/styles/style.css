@@ -1,0 +1,442 @@
+/* src/styles/style.css */
+
+/* ===== Общие ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  padding: 20px;
+}
+
+#app {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== Заголовок ===== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.app-header h1 {
+  font-size: 28px;
+  color: #1a1a2e;
+}
+
+.app-header .stats {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ===== Навигация ===== */
+.nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.nav button {
+  padding: 8px 20px;
+  border: 2px solid #007bff;
+  background: transparent;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.nav button:hover,
+.nav button.active {
+  background: #007bff;
+  color: white;
+}
+
+/* ===== Форма создания ===== */
+.car-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.car-form h3 {
+  font-size: 16px;
+  color: #555;
+  margin-right: 8px;
+}
+
+.car-form input[type="text"] {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.car-form input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.car-form input[type="color"] {
+  width: 44px;
+  height: 44px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 2px;
+  background: white;
+}
+
+.car-form .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.car-form .btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.car-form .btn-primary:hover {
+  background: #0056b3;
+}
+
+.car-form .btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.car-form .btn-success:hover {
+  background: #1e7e34;
+}
+
+/* ===== Список машин ===== */
+.car-list {
+  margin: 20px 0;
+}
+
+.car-grid {
+  display: grid;
+  gap: 10px;
+}
+
+/* ===== Карточка машины ===== */
+.car-card {
+  background: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.car-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.car-card .car-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.car-card .car-color {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  flex-shrink: 0;
+}
+
+.car-card .car-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.car-card .car-id {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.car-card .car-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.car-card .car-actions button {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.car-card .car-actions button:hover {
+  transform: scale(1.05);
+}
+
+.car-card .btn-delete {
+  background: #dc3545;
+  color: white;
+}
+
+.car-card .btn-delete:hover {
+  background: #c82333;
+}
+
+.car-card .btn-edit {
+  background: #ffc107;
+  color: #333;
+}
+
+.car-card .btn-edit:hover {
+  background: #e0a800;
+}
+
+.car-card .btn-start {
+  background: #28a745;
+  color: white;
+}
+
+.car-card .btn-start:hover {
+  background: #218838;
+}
+
+.car-card .btn-stop {
+  background: #6c757d;
+  color: white;
+}
+
+.car-card .btn-stop:hover {
+  background: #5a6268;
+}
+
+.car-card .btn-start:disabled,
+.car-card .btn-stop:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== Пагинация ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.pagination button {
+  padding: 8px 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination .page-info {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== Пустое состояние ===== */
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 40px 0;
+  font-size: 16px;
+}
+
+/* ===== Анимация трассы ===== */
+.race-track {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.race-track .track-road {
+  width: 100%;
+  height: 60px;
+  background: repeating-linear-gradient(
+    90deg,
+    #333 0px,
+    #333 20px,
+    #555 20px,
+    #555 40px
+  );
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.race-track .car-on-track {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  transition: none;
+}
+
+.race-track .finish-line {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: repeating-linear-gradient(
+    180deg,
+    black 0px,
+    black 8px,
+    white 8px,
+    white 16px
+  );
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 600px) {
+  .car-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .car-card .car-info {
+    justify-content: center;
+  }
+
+  .car-card .car-actions {
+    justify-content: center;
+  }
+
+  .car-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .car-form input[type="text"] {
+    min-width: unset;
+  }
+
+  .car-form input[type="color"] {
+    width: 100%;
+    height: 44px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.car-form .btn-success:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Трек ===== */
+.race-track {
+  margin-top: 8px;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.track-road {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #2d2d2d;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid #555;
+}
+
+.car-on-track {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%) translateX(0px);
+  font-size: 28px;
+  transition: none;
+  z-index: 2;
+}
+
+.finish-line {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 8px;
+  background: repeating-linear-gradient(
+    180deg,
+    #000 0px,
+    #000 8px,
+    #fff 8px,
+    #fff 16px
+  );
+  z-index: 1;
+}
+
+/* Поломка - красный эффект */
+.car-on-track.broken {
+  filter: grayscale(1) hue-rotate(300deg);
+}
+
+/* Финиш - золотой эффект */
+.car-on-track.finished {
+  filter: drop-shadow(0 0 8px gold);
+}
