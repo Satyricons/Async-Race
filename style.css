@@ -138,3 +138,169 @@
             font-weight: bold;
             font-size: 20px;
         }
+
+        /* ===== Winners ===== */
+.winners-container {
+  padding: 20px 0;
+}
+
+.winners-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.winners-count {
+  font-size: 14px;
+  color: #666;
+}
+
+.winners-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.winners-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.winners-table th,
+.winners-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.winners-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #555;
+}
+
+.winners-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.winners-table th.sortable:hover {
+  background: #e9ecef;
+}
+
+.winners-table th.sortable.active {
+  color: #007bff;
+}
+
+.winners-table .empty {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+}
+
+.winner-color {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.winners-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btn-pagination {
+  padding: 8px 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-pagination:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.btn-pagination:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* ===== Race Controls ===== */
+.race-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.btn-race {
+  background: #28a745;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.btn-race:hover:not(:disabled) {
+  background: #218838;
+  transform: scale(1.02);
+}
+
+.btn-race:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-reset {
+  background: #dc3545;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.btn-reset:hover:not(:disabled) {
+  background: #c82333;
+  transform: scale(1.02);
+}
+
+.btn-reset:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.race-status {
+  font-size: 14px;
+  color: #555;
+  margin-left: 12px;
+  font-weight: 500;
+}
